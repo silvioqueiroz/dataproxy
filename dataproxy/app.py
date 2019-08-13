@@ -7,6 +7,8 @@ import urlparse
 import urllib2
 import re
 
+import ssl
+
 from cgi import FieldStorage
 from StringIO import StringIO
 try:
@@ -253,7 +255,7 @@ def transform(type_name, flow, url, query, max_results):
 if __name__ == '__main__':
     from wsgiref.util import setup_testing_defaults
     from wsgiref.simple_server import make_server
-
+    ssl._create_default_https_context = ssl._create_unverified_context
     logging.basicConfig(level=logging.DEBUG)
     httpd = make_server('', 8000, JsonpDataProxy(100000))
     print "Serving on port 8000..."
