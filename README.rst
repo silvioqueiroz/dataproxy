@@ -173,7 +173,7 @@ Install (Local)
 
 Get the repo::
 
-    git clone https://github.com/okfn/dataproxy
+    git clone https://github.com/silvioqueiroz/dataproxy.git
 
 Install the submodules (we use submodules or downloaded libraries rather than
 requirements file as we need to deploy to app engine)::
